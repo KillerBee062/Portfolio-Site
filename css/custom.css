@@ -1,0 +1,97 @@
+/* css/custom.css - Dynamic interactions and animations */
+
+/* --- Scroll Animations --- */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delays for multiple items appearing at once */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+
+/* --- Dark Mode Variables & Transitions --- */
+html {
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+html.dark-mode {
+  --paper: #0b0c10;
+  --paper-2: #1f2833;
+  --ink-950: #fbfbfb;
+  --ink-900: #e2e8f0;
+  --ink-800: #cbd5e1;
+  --ink-700: #94a3b8;
+  --ink-500: #64748b;
+  --ink-400: #475569;
+  --ink-300: #334155;
+  --ink-200: #1e293b;
+  --ink-100: #0f172a;
+  --ink-50:  #020617;
+  
+  --white: #111827;
+}
+
+/* Specific Dark Mode overrides for cards and nav */
+html.dark-mode .info-card,
+html.dark-mode .stat-row,
+html.dark-mode .marquee-strip {
+  background: var(--paper-2);
+  border-color: var(--ink-200);
+}
+
+html.dark-mode .nav {
+  background: rgba(11, 12, 16, 0.7);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px -8px rgba(0, 0, 0, 0.5);
+}
+
+html.dark-mode .btn-outline {
+  border-color: var(--ink-300);
+  color: var(--ink-800);
+}
+
+html.dark-mode .btn-outline:hover {
+  background: var(--ink-800);
+  color: var(--paper);
+}
+
+/* Dark Mode Toggle Button */
+.theme-toggle {
+  background: none;
+  border: none;
+  color: var(--ink-700);
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s;
+  margin-right: 12px;
+}
+.theme-toggle:hover {
+  background: rgba(124, 58, 237, 0.1);
+  color: var(--violet);
+}
+.theme-toggle svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Active Nav State */
+.nav-links a.active {
+  color: var(--ink-900);
+  background: rgba(99,102,241,0.08);
+}
+.nav-links a.active .num {
+  color: var(--indigo);
+}
