@@ -578,7 +578,7 @@
     display: grid;
     grid-template-columns: 1.55fr 1fr;
     gap: 80px;
-    align-items: end;
+    align-items: center;
   }
   .hero-left { position: relative; }
   .hero-meta {
@@ -1051,17 +1051,41 @@
     letter-spacing: 0.06em;
     text-transform: uppercase;
   }
+  .tl-head {
+    display: flex; align-items: flex-start; justify-content: space-between;
+    gap: 12px; margin-bottom: 2px;
+  }
+  .tl-logo {
+    width: 44px; height: 44px; flex-shrink: 0;
+    object-fit: contain;
+    border-radius: 10px;
+    border: 1px solid var(--ink-100);
+    background: white;
+    padding: 5px;
+    box-shadow: 0 1px 4px rgba(20,24,43,0.07);
+  }
   .tl-role {
-    font-size: 26px; font-weight: 700; letter-spacing: -0.025em;
-    margin: 4px 0 6px; color: var(--ink-950);
-    line-height: 1.15;
+    font-size: 14px; font-weight: 600; letter-spacing: 0.01em;
+    margin: 4px 0 6px; color: var(--ink-500);
+    line-height: 1.4;
   }
   .tl-company {
-    font-size: 15px; font-weight: 600;
-    color: var(--ink-700);
-    margin-bottom: 14px;
+    font-size: 24px; font-weight: 700; letter-spacing: -0.02em;
+    color: var(--ink-950);
+    margin-bottom: 14px; line-height: 1.2;
   }
-  .tl-company .at { color: var(--ink-400); font-weight: 500; }
+  .tl-company .at { font-size: 14px; color: var(--ink-400); font-weight: 500; letter-spacing: 0; }
+
+  /* Current role: flip back — role is the headline */
+  .tl-item:first-child .tl-role {
+    font-size: 24px; font-weight: 700; letter-spacing: -0.02em;
+    color: var(--ink-950); line-height: 1.2;
+  }
+  .tl-item:first-child .tl-company {
+    font-size: 14px; font-weight: 600; letter-spacing: 0.01em;
+    color: var(--ink-500); line-height: 1.4;
+  }
+  .tl-item:first-child .tl-company .at { font-size: 14px; }
   .tl-desc {
     font-size: 15.5px; color: var(--ink-500);
     margin: 0 0 16px; line-height: 1.6;
@@ -1226,6 +1250,7 @@
 <link rel="stylesheet" href="css/custom.css">
 </head>
 <body>
+<div class="scroll-progress" id="scrollProgress"></div>
 
 <div class="blobs" aria-hidden="true"></div>
 <div class="grain" aria-hidden="true"></div>
@@ -1269,7 +1294,7 @@
           <span class="serif">Hadi Ahamed.</span>
         </h1>
         <p class="hero-sub">
-          Senior Strategy Intelligence Scientist &amp; Data Engineer
+          <span id="typewriter-target">Senior Strategy Intelligence Scientist &amp; Data Engineer</span>
           <span class="at-co"><span class="dot"></span>ACI Limited</span>
         </p>
         <p class="hero-summary">
@@ -1291,14 +1316,46 @@
       </div>
 
       <aside class="hero-right" aria-label="Status">
+
+        <!-- ── Portrait + floating tech chips ── -->
+        <div class="portrait-stage">
+          <div class="halo" aria-hidden="true"></div>
+          <div class="portrait-backdrop" aria-hidden="true"></div>
+          <img src="images/hadi.jpg" alt="Portrait of Hadi Ahamed" class="portrait">
+
+          <div class="grid-deco" aria-hidden="true">
+            <span class="badge-tag"><span class="dot"></span>OPEN TO WORK</span>
+            <span class="badge-tag purple"><span class="dot"></span>STRATEGY · DATA</span>
+          </div>
+
+          <div class="die die-1" style="--x:-6%;--y:12%;--rot:-8deg;--dur:7s;--delay:0s;" title="Python">
+            <img src="icons/python.png" alt="Python" width="48" height="48">
+          </div>
+          <div class="die die-2" style="--x:98%;--y:4%;--rot:9deg;--dur:8s;--delay:-2s;" title="Deep Learning">
+            <img src="icons/deep-learning.png" alt="Deep Learning" width="44" height="44">
+          </div>
+          <div class="die die-3" style="--x:-8%;--y:58%;--rot:-10deg;--dur:9s;--delay:-4s;" title="Database">
+            <img src="icons/database-management.png" alt="Database" width="44" height="44">
+          </div>
+          <div class="die die-4" style="--x:104%;--y:48%;--rot:12deg;--dur:7.5s;--delay:-1.5s;" title="Business Intelligence">
+            <img src="icons/business-intelligence.png" alt="Business Intelligence" width="44" height="44">
+          </div>
+          <div class="die die-5" style="--x:10%;--y:92%;--rot:-6deg;--dur:8.5s;--delay:-3s;" title="Online Analytical">
+            <img src="icons/online-analytical.png" alt="Online Analytical" width="44" height="44">
+          </div>
+          <div class="die die-6" style="--x:96%;--y:94%;--rot:14deg;--dur:9.5s;--delay:-5s;" title="Azure">
+            <img src="icons/azure.png" alt="Azure" width="44" height="44">
+          </div>
+        </div>
+
         <div class="info-card">
           <div class="top">
             <span class="label">Currently</span>
             <span class="live">LIVE</span>
           </div>
           <div class="body">
-            Leading the Strategy Intelligence pod
-            <div class="sub">Forecasting · Causal ML · Lakehouse</div>
+            Senior Strategy Intelligence Scientist
+            <div class="sub">Analytics · Visualization · Strategy</div>
           </div>
         </div>
         <div class="info-card">
@@ -1313,12 +1370,12 @@
         </div>
         <div class="stat-row">
           <div class="stat-cell">
-            <div class="num">8<span class="pct">+</span></div>
+            <div class="num">6<span class="pct">+</span></div>
             <div class="lbl">Years</div>
           </div>
           <div class="stat-cell">
-            <div class="num">40<span class="pct">+</span></div>
-            <div class="lbl">Models shipped</div>
+            <div class="num">5<span class="pct"></span></div>
+            <div class="lbl">Companies</div>
           </div>
         </div>
       </aside>
@@ -1360,46 +1417,59 @@
     <div class="skills-layout">
       <div>
         <div class="skills-group">
-          <h4>Data engineering</h4>
-          <div class="pills">
-            <span class="pill featured">SQL</span>
-            <span class="pill featured">Snowflake</span>
-            <span class="pill featured">dbt</span>
-            <span class="pill">Apache Airflow</span>
-            <span class="pill">Apache Spark</span>
-            <span class="pill">Python</span>
-            <span class="pill">Azure Data Factory</span>
-            <span class="pill">Databricks</span>
-            <span class="pill">Kafka</span>
-            <span class="pill">PostgreSQL</span>
-          </div>
-        </div>
-
-        <div class="skills-group">
-          <h4>Machine learning &amp; analytics</h4>
+          <h4>Data science &amp; machine learning</h4>
           <div class="pills">
             <span class="pill featured">Deep Learning</span>
-            <span class="pill featured">Forecasting</span>
-            <span class="pill">PyTorch</span>
+            <span class="pill featured">Reinforcement Learning</span>
+            <span class="pill featured">Python</span>
             <span class="pill">scikit-learn</span>
-            <span class="pill">XGBoost</span>
-            <span class="pill">Causal Inference</span>
-            <span class="pill">MLflow</span>
-            <span class="pill">A/B Testing</span>
-            <span class="pill">Optimization</span>
+            <span class="pill">Statistical Modelling</span>
+            <span class="pill">Predictive Analytics</span>
+            <span class="pill">Time-Series Forecasting</span>
+            <span class="pill">NLP</span>
           </div>
         </div>
 
         <div class="skills-group">
-          <h4>Visualization &amp; strategy</h4>
+          <h4>Data engineering &amp; analytics</h4>
           <div class="pills">
+            <span class="pill featured">SQL</span>
             <span class="pill featured">Power BI</span>
-            <span class="pill">Tableau</span>
-            <span class="pill">Looker</span>
-            <span class="pill">Plotly / Dash</span>
-            <span class="pill">Executive Storytelling</span>
-            <span class="pill">OKR Design</span>
-            <span class="pill">Scenario Planning</span>
+            <span class="pill featured">Microsoft Excel</span>
+            <span class="pill">Data Engineering</span>
+            <span class="pill">Statistical Process Control</span>
+            <span class="pill">KPI Design</span>
+            <span class="pill">Dashboard Development</span>
+            <span class="pill">ERP Systems</span>
+          </div>
+        </div>
+
+        <div class="skills-group">
+          <h4>Business strategy &amp; quality</h4>
+          <div class="pills">
+            <span class="pill featured">Lean Six Sigma</span>
+            <span class="pill">S&amp;OP Planning</span>
+            <span class="pill">Root Cause Analysis</span>
+            <span class="pill">FMEA</span>
+            <span class="pill">Process Optimisation</span>
+            <span class="pill">Executive Reporting</span>
+            <span class="pill">ISO 9001</span>
+          </div>
+        </div>
+
+        <div class="skills-group">
+          <h4>Business acumen &amp; commercial strategy</h4>
+          <div class="pills">
+            <span class="pill featured">Sales Analytics</span>
+            <span class="pill featured">Route to Market (RTM)</span>
+            <span class="pill featured">Go-to-Market (GTM)</span>
+            <span class="pill">Supply Chain Analytics</span>
+            <span class="pill">Demand Planning</span>
+            <span class="pill">Market Penetration Analysis</span>
+            <span class="pill">Commercial Operations</span>
+            <span class="pill">FMCG Strategy</span>
+            <span class="pill">Trade Analytics</span>
+            <span class="pill">Customer Segmentation</span>
           </div>
         </div>
       </div>
@@ -1411,44 +1481,44 @@
         </div>
         <ul class="cert-list">
           <li>
-            <span class="cert-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"></circle><polyline points="8.5 13.5 6 22 12 19 18 22 15.5 13.5"></polyline></svg></span>
-            <div>
-              <div class="cert-title">Lean Six Sigma — Green Belt</div>
-              <div class="cert-meta">ASQ</div>
-            </div>
-            <span class="cert-year">'24</span>
-          </li>
-          <li>
-            <span class="cert-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg></span>
-            <div>
-              <div class="cert-title">Azure Data Engineer Associate</div>
-              <div class="cert-meta">Microsoft DP-203</div>
-            </div>
-            <span class="cert-year">'23</span>
-          </li>
-          <li>
-            <span class="cert-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 3"></path></svg></span>
-            <div>
-              <div class="cert-title">SnowPro Core Certification</div>
-              <div class="cert-meta">Snowflake</div>
-            </div>
-            <span class="cert-year">'23</span>
-          </li>
-          <li>
             <span class="cert-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg></span>
             <div>
-              <div class="cert-title">Deep Learning Specialization</div>
-              <div class="cert-meta">DeepLearning.AI</div>
+              <div class="cert-title">Statistics for Data Science with Python</div>
+              <div class="cert-meta">IBM</div>
             </div>
-            <span class="cert-year">'22</span>
+            <span class="cert-year">DS</span>
           </li>
           <li>
             <span class="cert-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"></rect><line x1="9" y1="9" x2="9" y2="15"></line><line x1="15" y1="9" x2="15" y2="15"></line><line x1="9" y1="12" x2="15" y2="12"></line></svg></span>
             <div>
-              <div class="cert-title">Power BI Data Analyst (PL-300)</div>
+              <div class="cert-title">Analyzing &amp; Visualizing Data with Excel</div>
               <div class="cert-meta">Microsoft</div>
             </div>
-            <span class="cert-year">'22</span>
+            <span class="cert-year">DA</span>
+          </li>
+          <li>
+            <span class="cert-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"></circle><polyline points="8.5 13.5 6 22 12 19 18 22 15.5 13.5"></polyline></svg></span>
+            <div>
+              <div class="cert-title">Lean Six Sigma Green Belt</div>
+              <div class="cert-meta">Quality Certification</div>
+            </div>
+            <span class="cert-year">QM</span>
+          </li>
+          <li>
+            <span class="cert-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></span>
+            <div>
+              <div class="cert-title">Becoming an Impactful &amp; Influential Leader</div>
+              <div class="cert-meta">Leadership &amp; Strategy</div>
+            </div>
+            <span class="cert-year">LS</span>
+          </li>
+          <li>
+            <span class="cert-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg></span>
+            <div>
+              <div class="cert-title">Quality Management Foundations</div>
+              <div class="cert-meta">Process &amp; Analytics</div>
+            </div>
+            <span class="cert-year">QA</span>
           </li>
         </ul>
       </aside>
@@ -1695,7 +1765,7 @@
       <div class="section-num">04<span class="slash">/</span>Experience</div>
       <div>
         <h2>A career built at the <span class="serif">intersection</span> of data &amp; strategy.</h2>
-        <p>From frontline analytics to platform leadership — eight years of compounding work.</p>
+        <p>From quality engineering and commercial operations to strategy intelligence — six years of compounding work.</p>
       </div>
     </div>
 
@@ -1703,66 +1773,97 @@
       <aside class="timeline-left" aria-hidden="true">
         <div class="label">Timeline</div>
         <div class="years">
-          <div class="year-pin active" data-year="0">2023 — Now</div>
-          <div class="year-pin" data-year="1">2021 — 2023</div>
-          <div class="year-pin" data-year="2">2019 — 2021</div>
-          <div class="year-pin" data-year="3">2017 — 2019</div>
+          <div class="year-pin active" data-year="0">2025 — Now</div>
+          <div class="year-pin" data-year="1">2024 — 2025</div>
+          <div class="year-pin" data-year="2">2023 — 2024</div>
+          <div class="year-pin" data-year="3">2021 — 2023</div>
+          <div class="year-pin" data-year="4">2020 — 2021</div>
         </div>
       </aside>
 
       <div class="timeline-track">
         <div class="tl-item" data-year="0">
           <span class="tl-dot"></span>
-          <div class="tl-date">
-            <span>2023 — PRESENT</span>
-            <span class="badge-now">Now</span>
+          <div class="tl-head">
+            <div class="tl-date">
+              <span>DEC 2025 — PRESENT</span>
+              <span class="badge-now">Now</span>
+            </div>
+            <img src="logos/aci.png" alt="ACI Limited" class="tl-logo" onerror="this.style.display='none'">
           </div>
           <h3 class="tl-role">Senior Strategy Intelligence Scientist</h3>
           <div class="tl-company">ACI Limited <span class="at">— Dhaka</span></div>
-          <p class="tl-desc">Lead the Strategy Intelligence pod serving six business units. Built the executive forecasting &amp; scenario-planning practice from scratch and own the lakehouse roadmap.</p>
+          <p class="tl-desc">Building analytics and visualization solutions that translate complex operational data into executive-level strategic decisions. Driving data-led initiatives across FMCG and consumer durables business units using Power BI, Python, and statistical modelling.</p>
           <div class="tl-tags">
             <span class="chip accent">Strategy</span>
-            <span class="chip">Forecasting</span>
-            <span class="chip">Leadership</span>
+            <span class="chip">Analytics</span>
+            <span class="chip">Power BI</span>
           </div>
         </div>
 
         <div class="tl-item" data-year="1">
           <span class="tl-dot"></span>
-          <div class="tl-date"><span>2021 — 2023</span></div>
-          <h3 class="tl-role">Data Engineer · ML Engineer</h3>
-          <div class="tl-company">ACI Limited <span class="at">— Dhaka</span></div>
-          <p class="tl-desc">Shipped the company's first production ML platform on Azure + Databricks; productionised demand and pricing models across the consumer and pharma businesses.</p>
+          <div class="tl-head">
+            <div class="tl-date"><span>OCT 2024 — DEC 2025</span></div>
+            <img src="logos/singer.png" alt="Singer Bangladesh" class="tl-logo" onerror="this.style.display='none'">
+          </div>
+          <h3 class="tl-role">Specialist Engineer</h3>
+          <div class="tl-company">Singer Bangladesh Ltd <span class="at">— Dhaka (Arçelik subsidiary)</span></div>
+          <p class="tl-desc">Designed and maintained data pipelines for quality KPI monitoring across OQC/IPQC/IQC/FQC stages. Used Python and Power BI to surface defect trends, automate reporting to Arçelik central teams, and apply statistical process control to reduce fault rates.</p>
           <div class="tl-tags">
-            <span class="chip accent">Azure</span>
-            <span class="chip">Databricks</span>
-            <span class="chip">MLOps</span>
+            <span class="chip accent">Quality</span>
+            <span class="chip">Lean Six Sigma</span>
+            <span class="chip">Python</span>
+            <span class="chip">Power BI</span>
           </div>
         </div>
 
         <div class="tl-item" data-year="2">
           <span class="tl-dot"></span>
-          <div class="tl-date"><span>2019 — 2021</span></div>
-          <h3 class="tl-role">Business Intelligence Analyst</h3>
-          <div class="tl-company">Singer Bangladesh <span class="at">— Dhaka</span></div>
-          <p class="tl-desc">Owned reporting and KPI design across retail and after-sales service. Replaced 40+ spreadsheet reports with a self-serve Power BI workspace adopted by 200+ users.</p>
+          <div class="tl-head">
+            <div class="tl-date"><span>DEC 2023 — OCT 2024</span></div>
+            <img src="logos/cocacola.png" alt="Coca-Cola Icecek" class="tl-logo" onerror="this.style.display='none'">
+          </div>
+          <h3 class="tl-role">Commercial Executive</h3>
+          <div class="tl-company">Coca-Cola Icecek <span class="at">— Gulshan, Dhaka</span></div>
+          <p class="tl-desc">Owned end-to-end sales data analysis for S&amp;OP reporting — built dashboards tracking market penetration, equipment reliability, and customer satisfaction metrics. Translated raw commercial data into actionable insights that aligned marketing and supply chain planning.</p>
           <div class="tl-tags">
-            <span class="chip accent">Power BI</span>
-            <span class="chip">Retail</span>
-            <span class="chip">KPI Design</span>
+            <span class="chip accent">Sales Analytics</span>
+            <span class="chip">S&amp;OP</span>
+            <span class="chip">Excel</span>
           </div>
         </div>
 
         <div class="tl-item" data-year="3">
           <span class="tl-dot"></span>
-          <div class="tl-date"><span>2017 — 2019</span></div>
-          <h3 class="tl-role">Data Analyst</h3>
-          <div class="tl-company">Singer Bangladesh <span class="at">— Dhaka</span></div>
-          <p class="tl-desc">Joined out of university as the team's first dedicated analyst. Built the warehouse foundation, taught myself SQL on the job, and never looked back.</p>
+          <div class="tl-head">
+            <div class="tl-date"><span>MAR 2021 — DEC 2023</span></div>
+            <img src="logos/walton.png" alt="Walton Hi-Tech" class="tl-logo" onerror="this.style.display='none'">
+          </div>
+          <h3 class="tl-role">Deputy Asst. Director → Asst. Director</h3>
+          <div class="tl-company">Walton Hi-Tech Industries PLC <span class="at">— Gazipur</span></div>
+          <p class="tl-desc">Applied statistical process control (SPC) and FMEA-driven data analysis to monitor assembly line quality across a high-volume manufacturing environment. Built Excel and Python-based reporting that cut daily fault tracking time and surfaced root causes for supplier corrective actions. Promoted to Asst. Director within 2 years 4 months.</p>
           <div class="tl-tags">
-            <span class="chip accent">SQL</span>
-            <span class="chip">ETL</span>
-            <span class="chip">Excel → BI</span>
+            <span class="chip accent">QC Engineering</span>
+            <span class="chip">FMEA</span>
+            <span class="chip">SPC</span>
+            <span class="chip">ISO 9001</span>
+          </div>
+        </div>
+
+        <div class="tl-item" data-year="4">
+          <span class="tl-dot"></span>
+          <div class="tl-head">
+            <div class="tl-date"><span>AUG 2020 — FEB 2021</span></div>
+            <img src="logos/echotex.png" alt="ECHOTEX" class="tl-logo" onerror="this.style.display='none'">
+          </div>
+          <h3 class="tl-role">Management Trainee</h3>
+          <div class="tl-company">ECHOTEX Limited <span class="at">— Gazipur</span></div>
+          <p class="tl-desc">First exposure to operational analytics in a data-rich manufacturing environment. Tracked productivity metrics, identified efficiency bottlenecks through data, and built the cross-functional collaboration and analytical foundations that shaped the rest of my career.</p>
+          <div class="tl-tags">
+            <span class="chip accent">Operations</span>
+            <span class="chip">Process Improvement</span>
+            <span class="chip">Project Management</span>
           </div>
         </div>
       </div>
@@ -1859,6 +1960,11 @@
     <span>v2.0 <span class="bullet">•</span> LAST DEPLOY: MAY 2026</span>
   </div>
 </footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+</button>
+<div class="toast" id="toast"></div>
 
 <script>
   // Mobile nav toggle

@@ -95,3 +95,357 @@ html.dark-mode .btn-outline:hover {
 .nav-links a.active .num {
   color: var(--indigo);
 }
+
+/* =========================================
+   Scroll Progress Bar
+   ========================================= */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: var(--grad);
+  z-index: 9999;
+  width: 0%;
+  border-radius: 0 2px 2px 0;
+  pointer-events: none;
+}
+
+/* =========================================
+   Back to Top Button
+   ========================================= */
+.back-to-top {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--ink-900);
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s, transform 0.3s, background 0.2s, box-shadow 0.2s;
+  z-index: 200;
+  box-shadow: 0 4px 20px rgba(20, 24, 43, 0.18);
+}
+.back-to-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.back-to-top:hover {
+  background: var(--indigo-d);
+  box-shadow: 0 8px 28px rgba(79, 70, 229, 0.4);
+  transform: translateY(-4px);
+}
+
+/* =========================================
+   Toast Notification
+   ========================================= */
+.toast {
+  position: fixed;
+  bottom: 44px;
+  left: 50%;
+  transform: translateX(-50%) translateY(16px);
+  background: var(--ink-950);
+  color: white;
+  padding: 12px 22px 12px 16px;
+  border-radius: 999px;
+  font-family: var(--mono);
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s, transform 0.25s;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  white-space: nowrap;
+}
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+.toast::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #4ade80;
+  flex-shrink: 0;
+}
+
+/* =========================================
+   Typewriter Cursor
+   ========================================= */
+.tw-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 0.85em;
+  background: var(--indigo);
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  border-radius: 1px;
+  animation: tw-blink 0.9s step-end infinite;
+}
+@keyframes tw-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* =========================================
+   Bento Card 3D Tilt & Perspective
+   ========================================= */
+.bento {
+  perspective: 1400px;
+}
+.card {
+  transform-style: preserve-3d;
+}
+.card:hover {
+  transform: translateY(-6px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+}
+
+/* =========================================
+   Dark Mode Component Fixes
+   ========================================= */
+html.dark-mode .card {
+  background: var(--paper-2);
+  border-color: var(--ink-200);
+}
+html.dark-mode .certs {
+  background: var(--paper-2);
+  border-color: var(--ink-200);
+}
+html.dark-mode .cert-list li:hover {
+  background: var(--ink-100);
+}
+html.dark-mode .pill {
+  background: var(--ink-100);
+  border-color: var(--ink-200);
+  color: var(--ink-800);
+}
+html.dark-mode .pill.featured {
+  background: var(--indigo-d);
+  color: white;
+  border-color: transparent;
+}
+html.dark-mode .chip {
+  background: var(--ink-100);
+  color: var(--ink-700);
+}
+html.dark-mode .chip.accent {
+  background: var(--indigo-d);
+  color: white;
+}
+html.dark-mode .back-to-top {
+  background: var(--paper-2);
+  color: var(--ink-900);
+  border: 1px solid var(--ink-200);
+}
+html.dark-mode .back-to-top:hover {
+  background: var(--indigo-d);
+  color: white;
+  border-color: transparent;
+}
+html.dark-mode .toast {
+  background: var(--paper-2);
+  border: 1px solid var(--ink-200);
+  color: var(--ink-900);
+}
+
+/* =========================================
+   Portrait Stage — photo + blob + floating chips
+   ========================================= */
+.portrait-stage {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  aspect-ratio: 1 / 1.18;
+  isolation: isolate;
+  margin: 0 auto 8px;
+}
+
+/* Ambient glow behind the blob */
+.halo {
+  position: absolute;
+  left: 50%; bottom: -6%;
+  width: 110%; aspect-ratio: 1;
+  transform: translateX(-50%);
+  background: radial-gradient(circle at 50% 60%, rgba(139,92,246,0.28), rgba(99,102,241,0.18) 35%, transparent 65%);
+  filter: blur(36px);
+  z-index: 0;
+  animation: halo-pulse 6s ease-in-out infinite;
+}
+@keyframes halo-pulse {
+  0%, 100% { opacity: 0.85; transform: translateX(-50%) scale(1); }
+  50%       { opacity: 1;    transform: translateX(-50%) scale(1.04); }
+}
+
+/* Purple arch blob */
+.portrait-backdrop {
+  position: absolute;
+  left: 50%; bottom: 0;
+  transform: translateX(-50%);
+  width: 88%;
+  aspect-ratio: 1 / 1.05;
+  border-radius: 44% 44% 36% 36% / 44% 44% 18% 18%;
+  background:
+    radial-gradient(ellipse at 30% 25%, rgba(255,255,255,0.5), transparent 55%),
+    linear-gradient(160deg, #6366f1 0%, #8b5cf6 55%, #a855f7 100%);
+  box-shadow:
+    0 40px 80px -30px rgba(99,102,241,0.55),
+    0 20px 40px -20px rgba(139,92,246,0.45);
+  z-index: 1;
+  overflow: hidden;
+}
+.portrait-backdrop::after {
+  content: ""; position: absolute;
+  left: 50%; top: 18%;
+  width: 70%; aspect-ratio: 1;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(255,255,255,0.32), transparent 60%);
+  filter: blur(8px);
+}
+
+/* Portrait photo — works with transparent-bg PNG */
+.portrait {
+  position: absolute;
+  left: 50%; bottom: 0;
+  transform: translateX(-50%);
+  width: 96%;
+  z-index: 2;
+  border-radius: 0;
+  filter:
+    drop-shadow(0 24px 32px rgba(20,24,43,0.28))
+    drop-shadow(0 6px 12px rgba(99,102,241,0.3));
+  /* Fade feet into backdrop for natural emergence */
+  -webkit-mask-image: linear-gradient(180deg, black 72%, transparent 100%);
+          mask-image: linear-gradient(180deg, black 72%, transparent 100%);
+  animation: portrait-float 8s ease-in-out infinite;
+}
+/* In dark mode, slightly boost the indigo glow so face pops on dark bg */
+html.dark-mode .portrait {
+  filter:
+    drop-shadow(0 24px 32px rgba(0,0,0,0.5))
+    drop-shadow(0 6px 16px rgba(139,92,246,0.45))
+    brightness(1.04);
+}
+@keyframes portrait-float {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%       { transform: translateX(-50%) translateY(-6px); }
+}
+
+/* Badge tags (left overlay) */
+.grid-deco {
+  position: absolute;
+  left: -4%; bottom: 30%;
+  z-index: 4;
+  display: flex; flex-direction: column; gap: 10px;
+  pointer-events: none;
+}
+.badge-tag {
+  background: white;
+  border: 1px solid var(--ink-100);
+  border-radius: 10px;
+  padding: 9px 13px;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--ink-700);
+  display: inline-flex; align-items: center; gap: 8px;
+  box-shadow: 0 8px 20px -6px rgba(20,24,43,0.12);
+  white-space: nowrap;
+}
+.badge-tag .dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 0 3px rgba(34,197,94,0.2);
+  flex-shrink: 0;
+}
+.badge-tag.purple .dot {
+  background: var(--violet);
+  box-shadow: 0 0 0 3px rgba(139,92,246,0.2);
+}
+
+/* Floating tech chip cards */
+.die {
+  position: absolute;
+  left: var(--x); top: var(--y);
+  width: 88px; height: 88px;
+  border-radius: 22px;
+  background: linear-gradient(155deg, #ffffff 0%, #f6f7fb 60%, #eef1f8 100%);
+  border: 1px solid rgba(255,255,255,0.9);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,1) inset,
+    0 -3px 0 rgba(20,24,43,0.05) inset,
+    0 2px 4px rgba(20,24,43,0.04),
+    0 12px 24px -6px rgba(20,24,43,0.16),
+    0 28px 48px -14px rgba(99,102,241,0.28);
+  display: grid; place-items: center;
+  transform: translate(-50%, -50%) rotate(var(--rot));
+  z-index: 5;
+  animation: die-float var(--dur) ease-in-out infinite;
+  animation-delay: var(--delay);
+  transition: transform .3s cubic-bezier(.2,.7,.2,1), box-shadow .3s;
+}
+/* Glossy highlight */
+.die::before {
+  content: ""; position: absolute;
+  top: 4px; left: 4px; right: 4px; height: 45%;
+  border-radius: 18px 18px 30px 30px / 18px 18px 100% 100%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0) 100%);
+  pointer-events: none;
+}
+.die:hover {
+  transform: translate(-50%, -50%) rotate(0deg) scale(1.1);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,1) inset,
+    0 -3px 0 rgba(20,24,43,0.05) inset,
+    0 2px 4px rgba(20,24,43,0.04),
+    0 20px 36px -6px rgba(20,24,43,0.22),
+    0 40px 60px -14px rgba(99,102,241,0.4);
+}
+.die img { position: relative; z-index: 1; object-fit: contain; }
+
+@keyframes die-float {
+  0%, 100% { transform: translate(-50%, -50%) rotate(var(--rot)) translateY(0); }
+  50%       { transform: translate(-50%, -50%) rotate(calc(var(--rot) + 3deg)) translateY(-12px); }
+}
+
+/* Per-die size variation */
+.die-1 { width: 96px; height: 96px; }
+.die-2 { width: 80px; height: 80px; }
+.die-3 { width: 80px; height: 80px; }
+.die-4 { width: 84px; height: 84px; }
+.die-5 { width: 82px; height: 82px; }
+.die-6 { width: 74px; height: 74px; }
+.die-7 { width: 72px; height: 72px; }
+
+/* Dark mode */
+html.dark-mode .portrait-backdrop {
+  box-shadow:
+    0 40px 80px -30px rgba(99,102,241,0.4),
+    0 20px 40px -20px rgba(139,92,246,0.3);
+}
+html.dark-mode .die {
+  background: linear-gradient(155deg, #1e293b 0%, #0f172a 100%);
+  border-color: rgba(255,255,255,0.12);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.08) inset,
+    0 12px 24px -6px rgba(0,0,0,0.4),
+    0 28px 48px -14px rgba(99,102,241,0.2);
+}
+html.dark-mode .badge-tag {
+  background: var(--paper-2);
+  border-color: var(--ink-200);
+  color: var(--ink-700);
+}
