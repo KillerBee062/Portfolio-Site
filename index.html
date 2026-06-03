@@ -721,6 +721,33 @@
     text-transform: uppercase; color: var(--ink-400);
     margin-top: 8px;
   }
+  .upwork-badge {
+    display: inline-flex; align-items: center; gap: 5px;
+    margin-top: 9px;
+    padding: 3px 9px 3px 7px;
+    border-radius: 999px;
+    background: rgba(111,218,68,0.1);
+    border: 1px solid rgba(111,218,68,0.28);
+    font-family: var(--mono); font-size: 9px; font-weight: 700;
+    letter-spacing: 0.07em; text-transform: uppercase;
+    color: #4a9e24;
+  }
+  html.dark-mode .upwork-badge {
+    background: rgba(111,218,68,0.13);
+    border-color: rgba(111,218,68,0.35);
+    color: #6fda44;
+  }
+  .upwork-badge .up-dot {
+    width: 5px; height: 5px; border-radius: 50%;
+    background: #6fda44;
+    box-shadow: 0 0 0 2px rgba(111,218,68,0.3);
+    flex-shrink: 0;
+    animation: upwork-pulse 2s ease-in-out infinite;
+  }
+  @keyframes upwork-pulse {
+    0%, 100% { box-shadow: 0 0 0 2px rgba(111,218,68,0.3); }
+    50%       { box-shadow: 0 0 0 4px rgba(111,218,68,0.15); }
+  }
 
   /* ============ Marquee ============ */
   .marquee-strip {
@@ -1374,8 +1401,9 @@
             <div class="lbl">Years</div>
           </div>
           <div class="stat-cell">
-            <div class="num">2000<span class="pct"></span></div>
+            <div class="num">2000<span class="pct">+</span></div>
             <div class="lbl">Upwork Hours</div>
+            <span class="upwork-badge"><span class="up-dot"></span>Top Rated</span>
           </div>
         </div>
       </aside>
