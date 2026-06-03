@@ -1,0 +1,96 @@
+name: Performance Checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  # ── 1. Asset Size Guard ─────────────────────────────────────────────────────
+  asset-size:
+    name: Asset size budget
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check image sizes
+        run: |
+          FAIL=0
+          MAX_PORTRAIT_KB=300
+          MAX_LOGO_KB=150
+          MAX_ICON_KB=60
+
+          echo "=== Portrait ==="
+          for f in images/*.webp images/*.jpg images/*.png; do
+            [ -f "$f" ] || continue
+            SIZE=$(du -k "$f" | cut -f1)
+            echo "  $f: ${SIZE}KB"
+            if [ $SIZE -gt $MAX_PORTRAIT_KB ]; then
+              echo "  FAIL: $f exceeds ${MAX_PORTRAIT_KB}KB limit"
+              FAIL=1
+            fi
+          done
+
+          echo "=== Logos ==="
+          for f in logos/*.webp logos/*.png; do
+            [ -f "$f" ] || continue
+            SIZE=$(du -k "$f" | cut -f1)
+            echo "  $f: ${SIZE}KB"
+            if [ $SIZE -gt $MAX_LOGO_KB ]; then
+              echo "  FAIL: $f exceeds ${MAX_LOGO_KB}KB limit"
+              FAIL=1
+            fi
+          done
+
+          echo "=== Icons ==="
+          for f in icons/*.webp icons/*.png; do
+            [ -f "$f" ] || continue
+            SIZE=$(du -k "$f" | cut -f1)
+            echo "  $f: ${SIZE}KB"
+            if [ $SIZE -gt $MAX_ICON_KB ]; then
+              echo "  FAIL: $f exceeds ${MAX_ICON_KB}KB limit"
+              FAIL=1
+            fi
+          done
+
+          if [ $FAIL -eq 1 ]; then
+            echo ""
+            echo "One or more assets exceed the size budget."
+            echo "Convert images to WebP before merging."
+            exit 1
+          else
+            echo ""
+            echo "All assets within budget."
+          fi
+
+  # ── 2. Lighthouse CI ────────────────────────────────────────────────────────
+  lighthouse:
+    name: Lighthouse audit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install serve
+        run: npm install -g serve
+
+      - name: Start static server
+        run: serve -p 3000 . &
+        shell: bash
+
+      - name: Wait for server
+        run: npx wait-on http://localhost:3000 --timeout 15000
+
+      - name: Run Lighthouse CI
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          urls: |
+            http://localhost:3000/
+          budgetPath: .github/lighthouse-budget.json
+          uploadArtifacts: true
+          temporaryPublicStorage: true
