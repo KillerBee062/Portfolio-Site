@@ -1,0 +1,22 @@
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+desktop.ini
+*~
+*.swp
+.idea/
+.vscode/
+
+# Node (Lighthouse CI / serve)
+node_modules/
+npm-debug.log*
+.lighthouseci/
+
+# Build / scraping scratch files
+*.tmp
+debug.py
+extract.py
+patch.py
+stitch_design*.html
+unpacked_stitch.html
+index_backup_static.html

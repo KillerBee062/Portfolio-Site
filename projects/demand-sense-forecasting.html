@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demand-Sense Forecasting Engine — Hadi Ahamed</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+</head>
+<body>
+<!-- [PLACEHOLDER] Replace dummy copy with real project details when available -->
+
+<div class="blobs"></div>
+
+<div class="nav-wrap">
+  <div class="container">
+    <nav class="nav">
+      <a href="../index.html" class="logo">
+        <div class="logo-mark">HA</div>
+        <div class="logo-name"><span>Hadi Ahamed</span><small>STRATEGY · DATA</small></div>
+      </a>
+      <a href="index.html" class="back-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        All projects
+      </a>
+    </nav>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+
+    <div class="proj-hero">
+      <div class="proj-meta"><span class="accent">P / 01</span> — Forecasting</div>
+      <h1>Demand-Sense <span class="serif">Forecasting Engine.</span></h1>
+      <p class="proj-tagline">SKU-level demand forecasts across 30,000 items, blending LightGBM with regional weather and promotion signals — turning noisy historical sales into stockout-proof planning.</p>
+      <div class="proj-chips">
+        <span class="chip accent">LightGBM</span>
+        <span class="chip">Airflow</span>
+        <span class="chip">Snowflake</span>
+        <span class="chip">MLflow</span>
+        <span class="chip">Python</span>
+      </div>
+
+      <div class="proj-art bg-1">
+        <svg viewBox="0 0 800 360" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <pattern id="grid1" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"></path></pattern>
+          </defs>
+          <rect width="800" height="360" fill="url(#grid1)"></rect>
+          <g fill="none" stroke="rgba(255,255,255,0.55)" stroke-width="1.6">
+            <path d="M0 270 Q100 150 200 210 T400 170 T600 120 T800 80"></path>
+            <path d="M0 300 Q100 210 200 250 T400 230 T600 190 T800 170" opacity=".65"></path>
+            <path d="M0 240 Q100 100 200 170 T400 130 T600 80 T800 40" opacity=".5"></path>
+          </g>
+          <g fill="white">
+            <circle cx="200" cy="210" r="5"></circle>
+            <circle cx="400" cy="170" r="5"></circle>
+            <circle cx="600" cy="120" r="5"></circle>
+            <circle cx="800" cy="80" r="7"></circle>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <div class="proj-stats">
+      <div class="proj-stat"><div class="num">22<span class="pct">%</span></div><div class="lbl">Stockouts cut</div></div>
+      <div class="proj-stat"><div class="num">$3.4<span class="pct">M</span></div><div class="lbl">Inventory saved</div></div>
+      <div class="proj-stat"><div class="num">30<span class="pct">K</span></div><div class="lbl">SKUs forecast</div></div>
+      <div class="proj-stat"><div class="num">Daily</div><div class="lbl">Refresh cadence</div></div>
+    </div>
+
+    <div class="proj-block">
+      <div class="section-num">01 / Context</div>
+      <h2>The <span class="serif">problem.</span></h2>
+      <p>The business was relying on simple moving-average forecasts that broke down at the SKU-region level. Stockouts averaged 8% during promotional weeks while excess inventory sat in warehouses for slow-moving categories. Planners spent more time reconciling spreadsheets than making decisions.</p>
+      <p>We needed a forecasting engine that could ingest weather, holidays, promotions and macro signals — and produce a forecast planners could trust at the daily-SKU-store grain.</p>
+    </div>
+
+    <div class="proj-block">
+      <div class="section-num">02 / Approach</div>
+      <h2>How it <span class="serif">works.</span></h2>
+      <p>Hierarchical LightGBM models per category, with reconciliation across product-region pyramids. Features include lagged sales, calendar effects, regional weather (temperature anomalies, rainfall), promotion calendars, and competitor pricing signals.</p>
+      <ul>
+        <li><strong>Ingestion:</strong> Airflow DAGs pull from POS, ERP, weather APIs and promo systems into Snowflake.</li>
+        <li><strong>Modelling:</strong> One LightGBM model per category-region cluster, hyperparameter-tuned weekly.</li>
+        <li><strong>Reconciliation:</strong> Hierarchical forecasts reconciled via MinT for consistency across aggregations.</li>
+        <li><strong>Tracking:</strong> MLflow logs every model run; backtests trigger automatic retraining when drift exceeds threshold.</li>
+      </ul>
+      <div class="nda-note">
+        <strong>NDA:</strong>&nbsp;Specific feature engineering, business rules and client identity are abstracted in this case study.
+      </div>
+    </div>
+
+    <div class="proj-block">
+      <div class="section-num">03 / Outcomes</div>
+      <h2>What <span class="serif">shipped.</span></h2>
+      <ul>
+        <li>Reduced stockouts from 8% to 6.2% (a <strong>22% relative improvement</strong>) within 2 quarters of go-live.</li>
+        <li>Released <strong>$3.4M in trapped working capital</strong> by trimming safety stock on stable SKUs.</li>
+        <li>Cut planner forecast-prep time from 12 hours/week to 90 minutes.</li>
+        <li>Model now drives weekly S&OP discussions across 6 business units.</li>
+      </ul>
+    </div>
+
+    <div class="proj-nav">
+      <a href="index.html">
+        <div class="dir">← All projects</div>
+        <div class="title">Back to gallery</div>
+      </a>
+      <a href="customer-360-platform.html" class="next">
+        <div class="dir">Next →</div>
+        <div class="title">Customer 360 Platform</div>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <span>© 2026 HADI AHAMED <span class="bullet">•</span> CRAFTED IN DHAKA</span>
+    <span>v2.0 <span class="bullet">•</span> LAST DEPLOY: MAY 2026</span>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Customer 360 Platform — Hadi Ahamed</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+</head>
+<body>
+<!-- [PLACEHOLDER] Replace dummy copy with real project details when available -->
+
+<div class="blobs"></div>
+
+<div class="nav-wrap">
+  <div class="container">
+    <nav class="nav">
+      <a href="../index.html" class="logo">
+        <div class="logo-mark">HA</div>
+        <div class="logo-name"><span>Hadi Ahamed</span><small>STRATEGY · DATA</small></div>
+      </a>
+      <a href="index.html" class="back-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        All projects
+      </a>
+    </nav>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+
+    <div class="proj-hero">
+      <div class="proj-meta"><span class="accent">P / 02</span> — Identity</div>
+      <h1>Customer 360 <span class="serif">Platform.</span></h1>
+      <p class="proj-tagline">A unified identity graph stitching 4.2M customer records across pharma and consumer business units — finally giving marketing, sales and service teams one source of truth.</p>
+      <div class="proj-chips">
+        <span class="chip accent">dbt</span>
+        <span class="chip">Spark</span>
+        <span class="chip">Graph</span>
+        <span class="chip">Snowflake</span>
+        <span class="chip">Python</span>
+      </div>
+
+      <div class="proj-art bg-2">
+        <svg viewBox="0 0 800 360" preserveAspectRatio="xMidYMid slice">
+          <g fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.2">
+            <circle cx="400" cy="180" r="60"></circle><circle cx="400" cy="180" r="110"></circle><circle cx="400" cy="180" r="160"></circle>
+          </g>
+          <g fill="white">
+            <circle cx="400" cy="180" r="8"></circle>
+            <circle cx="290" cy="120" r="5"></circle><circle cx="520" cy="120" r="5"></circle>
+            <circle cx="280" cy="240" r="5"></circle><circle cx="540" cy="240" r="5"></circle>
+            <circle cx="400" cy="60" r="5"></circle><circle cx="400" cy="300" r="5"></circle>
+            <circle cx="220" cy="180" r="5"></circle><circle cx="580" cy="180" r="5"></circle>
+          </g>
+          <g stroke="rgba(255,255,255,0.5)" stroke-width="1">
+            <line x1="400" y1="180" x2="290" y2="120"></line><line x1="400" y1="180" x2="520" y2="120"></line>
+            <line x1="400" y1="180" x2="280" y2="240"></line><line x1="400" y1="180" x2="540" y2="240"></line>
+            <line x1="400" y1="180" x2="400" y2="60"></line><line x1="400" y1="180" x2="400" y2="300"></line>
+            <line x1="400" y1="180" x2="220" y2="180"></line><line x1="400" y1="180" x2="580" y2="180"></line>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <div class="proj-stats">
+      <div class="proj-stat"><div class="num">4.2<span class="pct">M</span></div><div class="lbl">Records unified</div></div>
+      <div class="proj-stat"><div class="num">94<span class="pct">%</span></div><div class="lbl">Match accuracy</div></div>
+      <div class="proj-stat"><div class="num">12</div><div class="lbl">Source systems</div></div>
+      <div class="proj-stat"><div class="num">Real-time</div><div class="lbl">Resolution</div></div>
+    </div>
+
+    <div class="proj-block">
+      <div class="section-num">01 / Context</div>
+      <h2>The <span class="serif">problem.</span></h2>
+      <p>Customer data lived in 12 separate systems — CRM, e-commerce, loyalty, pharmacy POS, service tickets, marketing automation. The same person could exist as 4 different records across systems, with no reliable way to link them. Campaigns double-targeted; service agents couldn't see the full history; marketing attribution was guesswork.</p>
+    </div>
+
+    <div class="proj-block">
+      <div class="section-num">02 / Approach</div>
+      <h2>How it <span class="serif">works.</span></h2>
+      <p>A probabilistic identity resolution pipeline that builds a graph of customer entities and links records via deterministic + fuzzy matching. dbt models build the canonical customer table; Spark jobs handle the graph stitching nightly.</p>
+      <ul>
+        <li><strong>Ingestion:</strong> Source CDC streams into Snowflake; dbt staging models standardise schemas.</li>
+        <li><strong>Matching:</strong> Spark-based graph resolution using email/phone/address hashing + name similarity.</li>
+        <li><strong>Survivorship:</strong> Rules decide which source wins per attribute; provenance preserved.</li>
+        <li><strong>Consumption:</strong> Reverse-ETL into CRM, marketing automation and service tools.</li>
+      </ul>
+      <div class="nda-note"><strong>NDA:</strong>&nbsp;Matching rules, client identity and exact data shape are abstracted.</div>
+    </div>
+
+    <div class="proj-block">
+      <div class="section-num">03 / Outcomes</div>
+      <h2>What <span class="serif">shipped.</span></h2>
+      <ul>
+        <li>Collapsed 7.8M source records into <strong>4.2M unified profiles</strong> with 94% match accuracy.</li>
+        <li>Cut campaign double-targeting by <strong>~31%</strong>, saving annualised media spend.</li>
+        <li>Service agents now see full cross-channel history in one screen.</li>
+        <li>Foundation for downstream personalisation and propensity models.</li>
+      </ul>
+    </div>
+
+    <div class="proj-nav">
+      <a href="demand-sense-forecasting.html">
+        <div class="dir">← Previous</div>
+        <div class="title">Demand-Sense Forecasting Engine</div>
+      </a>
+      <a href="executive-pulse-dashboard.html" class="next">
+        <div class="dir">Next →</div>
+        <div class="title">Executive Pulse Dashboard</div>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <span>© 2026 HADI AHAMED <span class="bullet">•</span> CRAFTED IN DHAKA</span>
+    <span>v2.0 <span class="bullet">•</span> LAST DEPLOY: MAY 2026</span>
+  </div>
+</footer>
+
+</body>
+</html>
