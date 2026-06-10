@@ -1173,15 +1173,15 @@
     <div class="section-head">
       <div class="section-num">03<span class="slash">/</span>Selected work</div>
       <div>
-        <h2>Projects shipped to <span class="serif">real businesses.</span></h2>
-        <p>A snapshot of platforms, models and decision systems I've designed and shipped — most under NDA, summarised here at a high level.</p>
+        <h2>Projects, built <span class="serif">in the open.</span></h2>
+        <p>Real, runnable data systems — every repo ships with tests, seeded benchmarks and honest baselines, and every number below is reproducible with a single command. Source on GitHub.</p>
       </div>
     </div>
 
     <div class="bento">
 
       <!-- WIDE FEATURE -->
-      <a href="projects/demand-sense-forecasting.html" class="card wide">
+      <a href="https://github.com/KillerBee062/demand-sense" target="_blank" rel="noopener" class="card wide">
         <div class="card-image"><div class="art art-4">
           <svg viewBox="0 0 800 350" preserveAspectRatio="xMidYMid slice">
             <defs>
@@ -1201,8 +1201,8 @@
               <circle cx="800" cy="70" r="6"></circle>
             </g>
             <rect x="40" y="40" width="140" height="58" rx="12" fill="url(#lg1)" opacity=".7"></rect>
-            <text x="60" y="68" fill="white" font-family="JetBrains Mono, monospace" font-size="11" font-weight="500" opacity=".8">DEMAND.FORECAST</text>
-            <text x="60" y="90" fill="white" font-family="Plus Jakarta Sans, sans-serif" font-size="20" font-weight="700">+ 18.4%</text>
+            <text x="60" y="68" fill="white" font-family="JetBrains Mono, monospace" font-size="11" font-weight="500" opacity=".8">DEMAND.SENSE</text>
+            <text x="60" y="90" fill="white" font-family="Plus Jakarta Sans, sans-serif" font-size="20" font-weight="700">WAPE −44.7%</text>
           </svg>
         </div></div>
         <div class="card-body">
@@ -1212,128 +1212,19 @@
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
             </span>
           </div>
-          <h3>Demand-Sense Forecasting Engine</h3>
-          <p>SKU-level demand forecasts across 30,000 items, blending LightGBM with regional weather and promotion signals. Cut stockouts 22%, reduced excess inventory by $3.4M.</p>
+          <h3>demand-sense — Demand Forecasting Engine</h3>
+          <p>SKU-level forecasting with LightGBM: leakage-safe features, rolling-origin backtests and baselines that fight back. 38.4% WAPE vs 69.5% seasonal-naive on a 146K-row panel — a 44.7% relative improvement, reproducible with one command.</p>
           <div class="chips">
             <span class="chip accent">LightGBM</span>
-            <span class="chip">Airflow</span>
-            <span class="chip">Snowflake</span>
-            <span class="chip">MLflow</span>
+            <span class="chip">Tweedie</span>
+            <span class="chip">Backtesting</span>
+            <span class="chip">Python</span>
           </div>
         </div>
       </a>
 
       <!-- NORMAL -->
-      <a href="projects/customer-360-platform.html" class="card">
-        <div class="card-image"><div class="art art-2">
-          <svg viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice">
-            <g fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1">
-              <circle cx="160" cy="90" r="28"></circle><circle cx="160" cy="90" r="52"></circle><circle cx="160" cy="90" r="76"></circle>
-            </g>
-            <g fill="white">
-              <circle cx="160" cy="90" r="5.5"></circle>
-              <circle cx="120" cy="55" r="3.5" opacity=".9"></circle>
-              <circle cx="220" cy="62" r="3.5" opacity=".9"></circle>
-              <circle cx="234" cy="125" r="3.5" opacity=".9"></circle>
-              <circle cx="92" cy="118" r="3.5" opacity=".9"></circle>
-              <circle cx="180" cy="155" r="3.5" opacity=".9"></circle>
-            </g>
-            <g stroke="rgba(255,255,255,0.5)" stroke-width="1">
-              <line x1="160" y1="90" x2="120" y2="55"></line>
-              <line x1="160" y1="90" x2="220" y2="62"></line>
-              <line x1="160" y1="90" x2="234" y2="125"></line>
-              <line x1="160" y1="90" x2="92" y2="118"></line>
-              <line x1="160" y1="90" x2="180" y2="155"></line>
-            </g>
-          </svg>
-        </div></div>
-        <div class="card-body">
-          <div class="card-num">
-            <span>P / 02 — Identity</span>
-            <span class="arrow-ext"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></span>
-          </div>
-          <h3>Customer 360 Platform</h3>
-          <p>Unified identity graph stitching 4.2M customer records across pharma and consumer business units.</p>
-          <div class="chips">
-            <span class="chip accent">dbt</span>
-            <span class="chip">Spark</span>
-            <span class="chip">Graph</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="projects/executive-pulse-dashboard.html" class="card">
-        <div class="card-image"><div class="art art-3">
-          <svg viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice">
-            <g fill="rgba(255,255,255,0.85)">
-              <rect x="30" y="110" width="20" height="56" rx="3"></rect>
-              <rect x="60" y="90" width="20" height="76" rx="3"></rect>
-              <rect x="90" y="64" width="20" height="102" rx="3"></rect>
-              <rect x="120" y="82" width="20" height="84" rx="3"></rect>
-              <rect x="150" y="44" width="20" height="122" rx="3"></rect>
-              <rect x="180" y="72" width="20" height="94" rx="3"></rect>
-              <rect x="210" y="28" width="20" height="138" rx="3"></rect>
-              <rect x="240" y="56" width="20" height="110" rx="3"></rect>
-              <rect x="270" y="38" width="20" height="128" rx="3"></rect>
-            </g>
-            <path d="M40 120 L70 100 L100 74 L130 92 L160 54 L190 82 L220 38 L250 66 L280 48" stroke="white" stroke-width="2" fill="none"></path>
-            <g fill="white"><circle cx="40" cy="120" r="3"></circle><circle cx="220" cy="38" r="3"></circle><circle cx="280" cy="48" r="3"></circle></g>
-          </svg>
-        </div></div>
-        <div class="card-body">
-          <div class="card-num">
-            <span>P / 03 — Dashboards</span>
-            <span class="arrow-ext"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></span>
-          </div>
-          <h3>Executive Pulse Dashboard</h3>
-          <p>One-screen command centre tracking margin, working capital and SLA across 14 markets — refresh every 15 min.</p>
-          <div class="chips">
-            <span class="chip accent">Power BI</span>
-            <span class="chip">DAX</span>
-            <span class="chip">Azure</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="projects/lakehouse-migration.html" class="card">
-        <div class="card-image"><div class="art art-1">
-          <svg viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice">
-            <g stroke="rgba(255,255,255,0.45)" stroke-width="1" fill="none">
-              <path d="M30 90 H130 V40 H230 V140 H290"></path>
-              <path d="M30 60 H80 V120 H180 V90 H290" stroke-dasharray="3 4"></path>
-            </g>
-            <g fill="rgba(255,255,255,0.95)" stroke="rgba(255,255,255,0.5)">
-              <rect x="20" y="80" width="22" height="22" rx="5"></rect>
-              <rect x="120" y="30" width="22" height="22" rx="5"></rect>
-              <rect x="220" y="130" width="22" height="22" rx="5"></rect>
-              <rect x="280" y="80" width="22" height="22" rx="5"></rect>
-              <rect x="170" y="80" width="22" height="22" rx="5"></rect>
-            </g>
-            <g fill="rgba(11,16,32,0.7)" font-family="JetBrains Mono" font-size="9" font-weight="600">
-              <text x="24" y="95">src</text>
-              <text x="123" y="45">etl</text>
-              <text x="224" y="145">ml</text>
-              <text x="173" y="95">api</text>
-              <text x="282" y="95">app</text>
-            </g>
-          </svg>
-        </div></div>
-        <div class="card-body">
-          <div class="card-num">
-            <span>P / 04 — Platform</span>
-            <span class="arrow-ext"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></span>
-          </div>
-          <h3>Lakehouse Migration</h3>
-          <p>Replatformed legacy ETL stack to a Databricks lakehouse — cut nightly batch from 6h to 38m.</p>
-          <div class="chips">
-            <span class="chip accent">Databricks</span>
-            <span class="chip">Delta</span>
-            <span class="chip">Airflow</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="projects/pricing-optimization-engine.html" class="card">
+      <a href="https://github.com/KillerBee062/uplift-pricing" target="_blank" rel="noopener" class="card">
         <div class="card-image"><div class="art art-5">
           <svg viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice">
             <g opacity=".9">
@@ -1351,20 +1242,20 @@
         </div></div>
         <div class="card-body">
           <div class="card-num">
-            <span>P / 05 — Pricing</span>
+            <span>P / 02 — Causal ML</span>
             <span class="arrow-ext"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></span>
           </div>
-          <h3>Pricing Optimization Engine</h3>
-          <p>Causal-uplift model for the consumer business — A/B validated, lifted gross margin by 3.1 points.</p>
+          <h3>uplift-pricing — Promo Targeting</h3>
+          <p>Causal uplift meta-learners (S/T/X) with Qini evaluation and profit-priced policies. Model targeting earns 2.9× the incremental profit of a blanket campaign on a simulated randomized trial.</p>
           <div class="chips">
             <span class="chip accent">Causal ML</span>
-            <span class="chip">PyTorch</span>
-            <span class="chip">A/B</span>
+            <span class="chip">scikit-learn</span>
+            <span class="chip">Qini</span>
           </div>
         </div>
       </a>
 
-      <a href="projects/logistics-telemetry.html" class="card">
+      <a href="https://github.com/KillerBee062/stream-sentinel" target="_blank" rel="noopener" class="card">
         <div class="card-image"><div class="art art-6">
           <svg viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice">
             <g fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.2">
@@ -1382,22 +1273,22 @@
         </div></div>
         <div class="card-body">
           <div class="card-num">
-            <span>P / 06 — Streaming</span>
+            <span>P / 03 — Streaming</span>
             <span class="arrow-ext"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></span>
           </div>
-          <h3>Real-time Logistics Telemetry</h3>
-          <p>Streaming pipeline for 1,200 vehicles — anomaly detection surfaces in under 30 seconds.</p>
+          <h3>stream-sentinel — Telemetry Anomalies</h3>
+          <p>Online anomaly detection over 216K fleet telemetry readings: 100% fault recall, 78s median detection latency, 2.4M readings/s on one core — pure stdlib, zero dependencies.</p>
           <div class="chips">
-            <span class="chip accent">Kafka</span>
-            <span class="chip">Flink</span>
-            <span class="chip">IoT</span>
+            <span class="chip accent">CUSUM</span>
+            <span class="chip">EWMA</span>
+            <span class="chip">Streaming</span>
           </div>
         </div>
       </a>
 
       <div class="view-all-wrap">
-        <a href="projects/index.html" class="view-all-btn">
-          View all projects
+        <a href="https://github.com/KillerBee062?tab=repositories" target="_blank" rel="noopener" class="view-all-btn">
+          View all on GitHub
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
         </a>
       </div>
