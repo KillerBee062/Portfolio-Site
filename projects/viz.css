@@ -1,0 +1,85 @@
+/* Visualization + GitHub-link styles for project detail pages */
+
+.gh-btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 13px 26px;
+  border-radius: 999px;
+  background: var(--ink-900); color: white;
+  font-weight: 600; font-size: 14.5px;
+  transition: transform .2s, box-shadow .2s, background .2s;
+  box-shadow: 0 6px 20px -8px rgba(11,16,32,0.4);
+}
+.gh-btn:hover {
+  transform: translateY(-2px);
+  background: var(--indigo-d);
+  box-shadow: 0 10px 28px -10px rgba(99,102,241,0.5);
+}
+.gh-btn svg { flex: none; }
+.gh-btn.ghost {
+  background: white; color: var(--ink-900);
+  border: 1px solid var(--ink-100);
+  box-shadow: none;
+}
+.gh-btn.ghost:hover { border-color: var(--indigo); color: var(--indigo-d); background: white; }
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 32px; }
+
+.viz-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 28px;
+}
+.viz-card {
+  background: white;
+  border: 1px solid var(--ink-100);
+  border-radius: var(--r-md);
+  padding: 22px 24px 18px;
+  box-shadow: 0 4px 24px rgba(20,24,43,0.05);
+}
+.viz-card.span2 { grid-column: 1 / -1; }
+.viz-card h4 {
+  margin: 0 0 4px;
+  font-size: 16.5px; font-weight: 700; letter-spacing: -0.01em;
+  color: var(--ink-900);
+}
+.viz-card .viz-sub {
+  font-size: 13px; color: var(--ink-400);
+  margin: 0 0 14px;
+}
+.viz-card svg { width: 100%; height: auto; display: block; }
+.viz-note {
+  font-family: var(--mono);
+  font-size: 11px; color: var(--ink-400);
+  margin-top: 10px;
+  letter-spacing: 0.02em;
+}
+.viz-legend {
+  display: flex; flex-wrap: wrap; gap: 14px;
+  margin-top: 10px;
+}
+.viz-legend-item {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-family: var(--mono); font-size: 11.5px; color: var(--ink-500);
+}
+.viz-legend-dot {
+  width: 10px; height: 10px; border-radius: 3px; display: inline-block;
+}
+
+.repro {
+  background: var(--ink-900);
+  border-radius: var(--r-md);
+  padding: 22px 26px;
+  margin-top: 24px;
+  font-family: var(--mono);
+  font-size: 13.5px;
+  color: #c9cee0;
+  overflow-x: auto;
+}
+.repro .cmd { color: white; font-weight: 600; }
+.repro .cmd::before { content: "$ "; color: var(--violet); }
+.repro .out { color: #6b7390; }
+.repro div { white-space: pre; line-height: 1.9; }
+
+@media (max-width: 840px) {
+  .viz-grid { grid-template-columns: 1fr; }
+}

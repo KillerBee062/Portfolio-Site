@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>stream-sentinel — Telemetry Anomaly Detection — Hadi Ahamed</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<link rel="stylesheet" href="viz.css">
+</head>
+<body>
+
+<div class="blobs"></div>
+
+<div class="nav-wrap">
+  <div class="container">
+    <nav class="nav">
+      <a href="../index.html" class="logo">
+        <div class="logo-mark">HA</div>
+        <div class="logo-name"><span>Hadi Ahamed</span><small>STRATEGY · DATA</small></div>
+      </a>
+      <a href="../index.html#projects" class="back-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        All projects
+      </a>
+    </nav>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+
+    <div class="proj-hero">
+      <div class="proj-meta"><span class="accent">P / 03</span> — Streaming · Open source</div>
+      <h1>stream-sentinel <span class="serif">Telemetry Anomalies.</span></h1>
+      <p class="proj-tagline">Online anomaly detection for fleet telemetry — constant-memory detectors, a transport-agnostic stream engine, and an evaluation harness that scores detectors the way operators experience them: recall, precision, and how many seconds until the alert fires. Pure standard library, zero dependencies.</p>
+      <div class="proj-chips">
+        <span class="chip accent">CUSUM</span>
+        <span class="chip">EWMA</span>
+        <span class="chip">Robust MAD</span>
+        <span class="chip">Streaming</span>
+        <span class="chip">Zero deps</span>
+      </div>
+      <div class="hero-actions">
+        <a class="gh-btn" href="https://github.com/KillerBee062/stream-sentinel" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11.04 11.04 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.7 5.39-5.27 5.68.41.36.78 1.06.78 2.14 0 1.54-.01 2.79-.01 3.17 0 .31.21.67.8.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+          View source on GitHub
+        </a>
+        <a class="gh-btn ghost" href="https://github.com/KillerBee062/stream-sentinel#results" target="_blank" rel="noopener">Reproduce the benchmark</a>
+      </div>
+
+      <div class="proj-art bg-6">
+        <svg viewBox="0 0 800 360" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <pattern id="grid3" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"></path></pattern>
+          </defs>
+          <rect width="800" height="360" fill="url(#grid3)"></rect>
+          <g fill="none" stroke="rgba(255,255,255,0.55)" stroke-width="1.6">
+            <path d="M0 180 C 120 100, 200 260, 320 180 S 520 100, 640 180 S 760 240 800 200"></path>
+            <path d="M0 220 C 120 140, 200 300, 320 220 S 520 140, 640 220 S 760 280 800 240" opacity=".55"></path>
+            <path d="M0 140 C 120 60, 200 220, 320 140 S 520 60, 640 140 S 760 200 800 160" opacity=".55"></path>
+          </g>
+          <g fill="white">
+            <circle cx="160" cy="160" r="6"></circle>
+            <circle cx="320" cy="180" r="6"></circle>
+            <circle cx="480" cy="130" r="6"></circle>
+            <circle cx="640" cy="180" r="8"></circle>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <div class="proj-stats">
+      <div class="proj-stat"><div class="num">100<span class="pct">%</span></div><div class="lbl">Fault recall (45/45)</div></div>
+      <div class="proj-stat"><div class="num">78<span class="pct">s</span></div><div class="lbl">Median detection latency</div></div>
+      <div class="proj-stat"><div class="num">2.4<span class="pct">M</span></div><div class="lbl">Readings/sec, one core</div></div>
+      <div class="proj-stat"><div class="num">0</div><div class="lbl">Runtime dependencies</div></div>
+    </div>
+
+    <div class="proj-block">
+      <div class="section-num">01 / Context</div>
+      <h2>The detector someone <span class="serif">unplugs by Friday.</span></h2>
+      <p>Every naive streaming detector fails the same way: it learns the anomaly into its own baseline. EWMA variance inflates during a slow ramp until the fault is invisible; a median window absorbs a drift and hides it; CUSUM latches into permanent alarm after a level shift and pages forever. <strong>stream-sentinel ships the fix for each failure mode</strong> — learn-gating, robust window admission, classic CUSUM restart — and the test suite proves they stay fixed.</p>
+      <p>The simulator injects three realistic fault types (gradual engine overheats, fuel leaks, sudden oil-pressure drops) with exact onset timestamps, so detection quality is measured, not estimated.</p>
+    </div>
+
+    <div class="proj-block">
+      <div class="section-num">02 / Results in data</div>
+      <h2>The benchmark, <span class="serif">visualised.</span></h2>
+      <p>Charts below are the actual output of <code style="font-family:var(--mono);font-size:15px;">stream-sentinel --vehicles 50 --hours 4</code>: 216,000 readings, 45 injected faults, seeded and deterministic.</p>
+
+      <div class="viz-grid">
+        <div class="viz-card span2">
+          <h4>Anatomy of a detection — engine overheat, vehicle VH003</h4>
+          <p class="viz-sub">Real simulated trace: temperature ramps +25°C over four minutes. All three detectors fire inside the fault window — CUSUM first at 75s, EWMA at 85s, MAD at 165s — then re-arm instead of paging forever.</p>
+          <div id="viz-trace"></div>
+          <div class="viz-note">shaded band = injected fault window (0–850s) · dashed lines = first alert per detector</div>
+        </div>
+
+        <div class="viz-card">
+          <h4>Recall &amp; precision by detector</h4>
+          <p class="viz-sub">Across all 45 injected faults on 150 vehicle-channel streams.</p>
+          <div id="viz-quality"></div>
+          <div class="viz-note">EWMA &amp; CUSUM: perfect recall · MAD: zero false alerts</div>
+        </div>
+
+        <div class="viz-card">
+          <h4>Median detection latency</h4>
+          <p class="viz-sub">Seconds from fault onset to first alert (10s reading interval).</p>
+          <div id="viz-latency"></div>
+          <div class="viz-note">readings arrive every 10s — EWMA fires within ~8 readings</div>
+        </div>
+      </div>
+
+      <div class="repro">
+        <div class="cmd">pip install -e ".[dev]" &amp;&amp; pytest</div>
+        <div class="out">14 passed in 0.67s</div>
+        <div class="cmd">stream-sentinel --vehicles 50 --hours 4</div>
+        <div class="out">ewma_z   recall=100.0% (45/45)  precision=81.6%  median latency=78s  [2,424,441 readings/s]</div>
+      </div>
+    </div>
+
+    <div class="proj-block">
+      <div class="section-num">03 / Design</div>
+      <h2>How it <span class="serif">works.</span></h2>
+      <ul>
+        <li><strong>O(1) state per stream:</strong> EWMA and CUSUM keep a handful of floats per vehicle × channel; a fleet of thousands fits in memory with room to spare.</li>
+        <li><strong>Transport-agnostic engine:</strong> consumes any iterable of readings — swapping the simulator for a Kafka consumer or MQTT subscription is a for-loop.</li>
+        <li><strong>Debounce at two levels:</strong> detectors require consecutive anomalous samples; the engine enforces a per-stream re-arm interval. One fault → one page.</li>
+        <li><strong>Quality bar in CI:</strong> tests enforce recall ≥ 70% and precision ≥ 70% for every detector on a fresh simulated fleet — regressions fail the build, not the on-call.</li>
+      </ul>
+    </div>
+
+    <div class="proj-nav">
+      <a href="uplift-pricing.html">
+        <div class="dir">← Previous</div>
+        <div class="title">uplift-pricing</div>
+      </a>
+      <a href="demand-sense.html" class="next">
+        <div class="dir">Next →</div>
+        <div class="title">demand-sense</div>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <span>© 2026 HADI AHAMED <span class="bullet">•</span> CRAFTED IN DHAKA</span>
+    <span>OPEN SOURCE <span class="bullet">•</span> MIT LICENSE</span>
+  </div>
+</footer>
+
+<script src="charts.js"></script>
+<script>
+const TRACE = {
+  t: [-1195,-1185,-1175,-1165,-1155,-1145,-1135,-1125,-1115,-1105,-1095,-1085,-1075,-1065,-1055,-1045,-1035,-1025,-1015,-1005,-995,-985,-975,-965,-955,-945,-935,-925,-915,-905,-895,-885,-875,-865,-855,-845,-835,-825,-815,-805,-795,-785,-775,-765,-755,-745,-735,-725,-715,-705,-695,-685,-675,-665,-655,-645,-635,-625,-615,-605,-595,-585,-575,-565,-555,-545,-535,-525,-515,-505,-495,-485,-475,-465,-455,-445,-435,-425,-415,-405,-395,-385,-375,-365,-355,-345,-335,-325,-315,-305,-295,-285,-275,-265,-255,-245,-235,-225,-215,-205,-195,-185,-175,-165,-155,-145,-135,-125,-115,-105,-95,-85,-75,-65,-55,-45,-35,-25,-15,-5,5,15,25,35,45,55,65,75,85,95,105,115,125,135,145,155,165,175,185,195,205,215,225,235,245,255,265,275,285,295,305,315,325,335,345,355,365,375,385,395,405,415,425,435,445,455,465,475,485,495,505,515,525,535,545,555,565,575,585,595,605,615,625,635,645,655,665,675,685,695,705,715,725,735,745,755,765,775,785,795,805,815,825,835,845,855,865,875,885,895,905,915,925,935,945,955,965,975,985,995,1005,1015,1025,1035,1045,1055,1065,1075,1085,1095,1105,1115,1125,1135,1145,1155,1165,1175,1185,1195,1205,1215,1225,1235,1245,1255,1265,1275,1285,1295,1305,1315,1325,1335,1345,1355,1365,1375,1385,1395],
+  v: [94.67,93.72,93.53,94.42,93.52,90.55,90.61,96.37,94.27,95.45,92.86,92.6,92.83,93.87,94.97,94.37,93.94,94.16,88.54,90.97,92.66,95.61,91.92,93.98,93.88,89.79,94.28,93.76,93.8,94.42,92.7,93.24,92.41,90.83,95.91,92.47,92.39,91.65,92.34,95.15,93.81,89.13,91.74,92.48,91.92,91.82,90.24,92.98,89.65,94.5,94.32,93.86,89.91,93.69,93.39,91.95,92.39,92.6,92.12,93.07,91.93,93.13,97.56,96.48,93.86,92.47,93.21,94.58,94.98,92.93,95.53,90.12,94.2,94.45,94.47,95.28,95.46,93.06,94.1,92.15,94.85,94.61,96.01,96.94,95.63,92.6,92.39,92.95,92.11,93.79,94.58,96.84,91.7,93.22,86.96,91.73,92.11,94.78,93.65,92.45,96.67,95.3,94.19,94.98,95.66,94.72,92.3,93.3,94.28,95.61,94.05,96.4,90.58,95.96,91.09,95.77,92.8,95.05,93.59,96.01,96.14,97.77,96.94,99.8,99.89,99.08,100.37,104.98,101.35,103.92,105.55,107.27,106.34,106.27,111.48,111.55,112.25,112.73,113.04,113.09,116.07,117.49,117.73,118.36,118.9,118.41,119.13,121.19,121.85,123.74,119.06,119.95,120.99,115.24,119.02,118.71,118.28,118.62,119.28,116.31,120.24,119.58,119.95,118.48,120.78,118.41,118.41,115.51,119.08,121.73,119.75,118.46,114.39,120.05,121.09,116.41,117.0,118.28,116.16,116.66,116.74,115.69,118.67,120.21,118.05,116.92,118.08,120.14,118.68,117.31,118.37,114.97,117.89,118.39,116.17,115.63,118.74,119.74,117.66,118.67,119.82,120.14,118.89,114.59,116.87,96.27,92.48,93.86,93.94,94.28,94.69,92.05,92.5,94.01,90.75,92.66,92.97,91.84,92.51,92.82,94.64,93.11,94.49,92.55,91.09,92.69,91.09,93.43,92.02,93.59,92.36,92.89,91.18,92.7,93.53,92.82,98.08,92.33,94.19,92.23,94.25,94.67,95.87,94.52,95.38,91.96,93.71,92.32,92.46,94.72,94.76,93.1,94.08,93.18,90.15,93.68,94.85,91.83,94.52,92.66],
+  faultEnd: 850,
+  alerts: { cusum: 75, ewma_z: 85, mad_z: 165 }
+};
+const DET = {
+  names: ["EWMA z", "CUSUM", "MAD z"],
+  recall: [1.0, 1.0, 0.956],
+  precision: [0.816, 0.926, 1.0],
+  latency: [78, 91, 134]
+};
+
+lineChart(document.getElementById("viz-trace"), {
+  label: "Engine temperature trace with fault window and alerts",
+  height: 380,
+  series: [
+    { label: "engine_temp_c", color: PALETTE.indigo, x: TRACE.t, y: TRACE.v, width: 1.8, area: true }
+  ],
+  bands: [{ x0: 0, x1: TRACE.faultEnd, color: PALETTE.pink, label: "INJECTED FAULT" }],
+  marks: [
+    { x: TRACE.alerts.cusum, label: "cusum 75s", color: PALETTE.green, dy: 44 },
+    { x: TRACE.alerts.ewma_z, label: "ewma 85s", color: PALETTE.amber, dy: 24 },
+    { x: TRACE.alerts.mad_z, label: "mad 165s", color: PALETTE.violet, dy: 4 }
+  ],
+  xFmt: v => (v >= 0 ? "+" : "") + Math.round(v) + "s",
+  yFmt: v => Math.round(v) + "°C"
+});
+
+groupedBarChart(document.getElementById("viz-quality"), {
+  label: "Recall and precision per detector",
+  groups: DET.names,
+  series: [
+    { label: "recall", color: PALETTE.indigo, values: DET.recall },
+    { label: "precision", color: PALETTE.violet, values: DET.precision }
+  ],
+  fmt: v => Math.round(v * 100) + "%",
+  yFmt: v => Math.round(v * 100) + "%"
+});
+
+barChart(document.getElementById("viz-latency"), {
+  label: "Median detection latency per detector",
+  labels: DET.names,
+  values: DET.latency,
+  colors: [PALETTE.indigo, PALETTE.cyan, PALETTE.violet],
+  fmt: v => Math.round(v) + "s"
+});
+</script>
+
+</body>
+</html>

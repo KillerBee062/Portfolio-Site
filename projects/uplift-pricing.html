@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>uplift-pricing — Causal Promo Targeting — Hadi Ahamed</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<link rel="stylesheet" href="viz.css">
+</head>
+<body>
+
+<div class="blobs"></div>
+
+<div class="nav-wrap">
+  <div class="container">
+    <nav class="nav">
+      <a href="../index.html" class="logo">
+        <div class="logo-mark">HA</div>
+        <div class="logo-name"><span>Hadi Ahamed</span><small>STRATEGY · DATA</small></div>
+      </a>
+      <a href="../index.html#projects" class="back-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        All projects
+      </a>
+    </nav>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+
+    <div class="proj-hero">
+      <div class="proj-meta"><span class="accent">P / 02</span> — Causal ML · Open source</div>
+      <h1>uplift-pricing <span class="serif">Promo Targeting.</span></h1>
+      <p class="proj-tagline">Who should actually get the discount? Causal uplift meta-learners with Qini evaluation and a policy simulator that prices the model's decisions in dollars — built on a randomized-campaign simulator with known ground-truth effects, so every claim is testable.</p>
+      <div class="proj-chips">
+        <span class="chip accent">Causal ML</span>
+        <span class="chip">S/T/X meta-learners</span>
+        <span class="chip">Qini / AUUC</span>
+        <span class="chip">scikit-learn</span>
+        <span class="chip">Python</span>
+      </div>
+      <div class="hero-actions">
+        <a class="gh-btn" href="https://github.com/KillerBee062/uplift-pricing" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11.04 11.04 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.7 5.39-5.27 5.68.41.36.78 1.06.78 2.14 0 1.54-.01 2.79-.01 3.17 0 .31.21.67.8.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+          View source on GitHub
+        </a>
+        <a class="gh-btn ghost" href="https://github.com/KillerBee062/uplift-pricing#results" target="_blank" rel="noopener">Reproduce the benchmark</a>
+      </div>
+
+      <div class="proj-art bg-5">
+        <svg viewBox="0 0 800 360" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <pattern id="grid2" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"></path></pattern>
+          </defs>
+          <rect width="800" height="360" fill="url(#grid2)"></rect>
+          <g opacity=".9">
+            <circle cx="220" cy="180" r="90" fill="rgba(255,255,255,0.18)"></circle>
+            <circle cx="400" cy="180" r="90" fill="rgba(255,255,255,0.25)"></circle>
+            <circle cx="580" cy="180" r="90" fill="rgba(255,255,255,0.18)"></circle>
+          </g>
+          <g fill="white" font-family="Plus Jakarta Sans" font-weight="700" font-size="28" text-anchor="middle">
+            <text x="220" y="190">A</text>
+            <text x="400" y="190">B</text>
+            <text x="580" y="190">C</text>
+          </g>
+          <path d="M220 280 Q400 340 580 280" stroke="white" stroke-width="2" fill="none" opacity=".7"></path>
+        </svg>
+      </div>
+    </div>
+
+    <div class="proj-stats">
+      <div class="proj-stat"><div class="num">2.9<span class="pct">×</span></div><div class="lbl">Profit vs blanket campaign</div></div>
+      <div class="proj-stat"><div class="num">0.143</div><div class="lbl">Best Qini coefficient</div></div>
+      <div class="proj-stat"><div class="num">0.90</div><div class="lbl">Corr with true effect</div></div>
+      <div class="proj-stat"><div class="num">20<span class="pct">K</span></div><div class="lbl">Customers simulated</div></div>
+    </div>
+
+    <div class="proj-block">
+      <div class="section-num">01 / Context</div>
+      <h2>The wrong question is <span class="serif">"who will buy?"</span></h2>
+      <p>A blanket promo pays the offer cost for every customer — including loyal ones who would have bought anyway (pure margin giveaway) and lost causes who won't respond either way. Uplift models estimate the <strong>causal effect of the offer per customer</strong>, so you only treat the persuadables.</p>
+      <p>The repo ships a randomized-campaign simulator that returns each customer's true treatment effect — price-sensitive and lapsed customers respond strongly, very frequent buyers show slight cannibalization. Because ground truth is known, the test suite asserts randomization balance, effect recovery, and learner ranking quality instead of taking them on faith.</p>
+    </div>
+
+    <div class="proj-block">
+      <div class="section-num">02 / Results in data</div>
+      <h2>The benchmark, <span class="serif">visualised.</span></h2>
+      <p>All charts are the actual output of <code style="font-family:var(--mono);font-size:15px;">uplift-pricing</code> on the seeded 20,000-customer campaign (60/40 train/holdout, offer cost $3.00, 30% margin).</p>
+
+      <div class="viz-grid">
+        <div class="viz-card span2">
+          <h4>Qini curves — incremental spend captured by targeting depth</h4>
+          <p class="viz-sub">Rank customers by predicted uplift, treat the top-x%, measure incremental outcome vs the randomized control. The further above the random-targeting diagonal, the better the ranking.</p>
+          <div id="viz-qini"></div>
+          <div class="viz-note">holdout n=8,000 · diagonal = random targeting</div>
+        </div>
+
+        <div class="viz-card span2">
+          <h4>Incremental profit by targeting depth — where theory meets P&amp;L</h4>
+          <p class="viz-sub">Profit of treating the top-x% by model score, priced against ground truth. The curve peaks where marginal uplift × margin = offer cost — treat ~55% of customers, earn 2.9× the blanket campaign.</p>
+          <div id="viz-profit"></div>
+          <div class="viz-note">offer cost $3.00 · margin 30% · dashed line = treat-everyone baseline ($2,199)</div>
+        </div>
+
+        <div class="viz-card span2">
+          <h4>Learner quality</h4>
+          <p class="viz-sub">Qini coefficient and correlation with the simulator's true per-customer effect, per meta-learner.</p>
+          <div id="viz-learners"></div>
+          <div class="viz-note">S-learner wins here; X-learner closes the gap when arms are imbalanced</div>
+        </div>
+      </div>
+
+      <div class="repro">
+        <div class="cmd">pip install -e ".[dev]" &amp;&amp; pytest</div>
+        <div class="out">15 passed in 19.02s</div>
+        <div class="cmd">uplift-pricing</div>
+        <div class="out">best policy: model_top_50pct -> $6,360 vs blanket campaign $2,199</div>
+      </div>
+    </div>
+
+    <div class="proj-block">
+      <div class="section-num">03 / Design</div>
+      <h2>How it <span class="serif">works.</span></h2>
+      <ul>
+        <li><strong>Three meta-learners</strong> (S, T, X) behind one <code style="font-family:var(--mono);font-size:14px;">fit / predict_uplift</code> interface, built on scikit-learn's HistGradientBoosting — swap in any regressor.</li>
+        <li><strong>Qini, not accuracy:</strong> uplift models are consumed as rankings; the Qini coefficient measures incremental outcome captured when targeting top-k vs random.</li>
+        <li><strong>Profit is the decision metric:</strong> the policy module converts scores into a targeting rule and sweeps the treated fraction in dollars.</li>
+        <li><strong>Tests prove the claims:</strong> randomization balance across arms, observed ATE ≈ true ATE, every learner's correlation with truth &gt; 0.5, and targeted policy beats blanket — all enforced in CI.</li>
+      </ul>
+    </div>
+
+    <div class="proj-nav">
+      <a href="demand-sense.html">
+        <div class="dir">← Previous</div>
+        <div class="title">demand-sense</div>
+      </a>
+      <a href="stream-sentinel.html" class="next">
+        <div class="dir">Next →</div>
+        <div class="title">stream-sentinel</div>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <span>© 2026 HADI AHAMED <span class="bullet">•</span> CRAFTED IN DHAKA</span>
+    <span>OPEN SOURCE <span class="bullet">•</span> MIT LICENSE</span>
+  </div>
+</footer>
+
+<script src="charts.js"></script>
+<script>
+const QINI = {
+  frac: [0,0.025,0.05,0.075,0.1,0.125,0.15,0.175,0.2,0.225,0.25,0.275,0.3,0.325,0.35,0.375,0.4,0.425,0.45,0.475,0.5,0.525,0.55,0.575,0.6,0.625,0.65,0.675,0.7,0.725,0.75,0.775,0.8,0.825,0.85,0.875,0.9,0.925,0.95,0.975,1.0],
+  s: [27.4,1770,3847.5,6111,7776.3,9515,11183.1,12774.3,14136.6,15496.6,16612.3,18415.4,19520,20917,22300,23229.5,24556.1,25664.3,26635.6,27668,28752.1,29772.4,30260.3,31008.5,31827.1,32547.1,33482.4,34282,35039.5,35541.2,36174.5,36507.9,36774.6,37072.9,37721.4,38031.1,38548.6,38862.3,39118.3,39632.8,39974.4],
+  t: [54.4,1694.6,3197.4,5042,6948.1,8435.6,10113.1,11567.9,13103.7,14534.4,15513.3,17035.9,18568,19681.2,20783.5,21960.1,23049.1,24174.8,24925.5,25966.4,26457.1,27168.1,27805.3,29043.4,29783.6,30370.3,31329,31799.9,32174.7,33116.7,34047.6,34626.9,35468.3,35909.3,36728.9,37581,38065.9,38717.4,39182.5,39848.3,39974.4],
+  x: [54.4,1753.1,3701.8,5387.4,7252.5,8745.8,10227.6,11971.9,13421.1,15282.7,16682.8,18381,19446.5,20587.4,21511.5,22606.2,23735.4,24602.7,25617.1,26755.9,27573.8,28528.9,29105,30073.6,31022.6,31918.9,32388.1,33048.7,33970.2,34708.8,35253.9,35964.5,36553.9,36877.3,37245.1,37620.8,38186.1,38692.4,39150.2,39726.5,39974.4]
+};
+const PROFIT = {
+  frac: [0.05,0.1,0.15,0.2,0.25,0.3,0.35,0.4,0.45,0.5,0.55,0.6,0.65,0.7,0.75,0.8,0.85,0.9,0.95],
+  profit: [1480,2622,3541,4276,4884,5375,5756,6027,6225,6360,6387,6280,6097,5813,5392,4865,4304,3673,2948],
+  treatAll: 2199
+};
+const METRICS = {
+  groups: ["S-learner", "X-learner", "T-learner"],
+  qini: [0.143, 0.129, 0.110],
+  corr: [0.902, 0.815, 0.715]
+};
+
+const total = QINI.s[QINI.s.length - 1];
+lineChart(document.getElementById("viz-qini"), {
+  label: "Qini curves per learner",
+  series: [
+    { label: "S-learner", color: PALETTE.indigo, x: QINI.frac, y: QINI.s, width: 2.8, area: true },
+    { label: "X-learner", color: PALETTE.violet, x: QINI.frac, y: QINI.x },
+    { label: "T-learner", color: PALETTE.cyan, x: QINI.frac, y: QINI.t },
+    { label: "random targeting", color: PALETTE.ink300, x: [0, 1], y: [0, total], dash: "6 5" }
+  ],
+  xFmt: v => Math.round(v * 100) + "%",
+  yFmt: v => "$" + (v / 1000).toFixed(0) + "k",
+  yMin: 0
+});
+
+lineChart(document.getElementById("viz-profit"), {
+  label: "Incremental profit by treated fraction",
+  series: [
+    { label: "model targeting (top-x%)", color: PALETTE.indigo, x: PROFIT.frac, y: PROFIT.profit, width: 3, dots: true, area: true },
+    { label: "blanket campaign", color: PALETTE.pink, x: [0.05, 0.95], y: [PROFIT.treatAll, PROFIT.treatAll], dash: "6 5" }
+  ],
+  marks: [{ x: 0.55, label: "peak $6,387", color: PALETTE.indigoD }],
+  xFmt: v => Math.round(v * 100) + "%",
+  yFmt: v => "$" + (v / 1000).toFixed(1) + "k",
+  yMin: 0
+});
+
+groupedBarChart(document.getElementById("viz-learners"), {
+  label: "Learner quality",
+  groups: METRICS.groups,
+  series: [
+    { label: "Qini coefficient", color: PALETTE.indigo, values: METRICS.qini },
+    { label: "corr with true effect", color: PALETTE.violet, values: METRICS.corr }
+  ],
+  fmt: v => v.toFixed(2)
+});
+</script>
+
+</body>
+</html>
